@@ -21,5 +21,24 @@ var maxDepth = function(root) {
     const rightDepth = maxDepth(root.right); 
     // console.log(root, leftDepth, rightDepth);
     // 9 -> 15 -> 7 -> 20,15,7 -> 3,9,20,null,null,15,7
+
+// maxDepth(3)
+//  ├─ maxDepth(9)
+//  │   ├─ maxDepth(null) → 0
+//  │   └─ maxDepth(null) → 0
+//  │   → console.log(9, 0, 0) → 반환 1
+//  └─ maxDepth(20)
+//      ├─ maxDepth(15)
+//      │   ├─ maxDepth(null) → 0
+//      │   └─ maxDepth(null) → 0
+//      │   → console.log(15, 0, 0) → 반환 1
+//      └─ maxDepth(7)
+//          ├─ maxDepth(null) → 0
+//          └─ maxDepth(null) → 0
+//          → console.log(7, 0, 0) → 반환 1
+//      → console.log(20, 1, 1) → 반환 2
+// → console.log(3, 1, 2) → 반환 3    
+
+
     return Math.max(leftDepth, rightDepth) + 1;
 };
